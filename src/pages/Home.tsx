@@ -11,7 +11,7 @@ export default function Home() {
     if (isFavourite) {
       setFavorites(favorites.filter((favFilm) => favFilm.id !== film.id));
     } else {
-      setFavorites([...favorites, film]);q
+      setFavorites([...favorites, film]);
     }
   };
   return (
