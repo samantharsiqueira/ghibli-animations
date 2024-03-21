@@ -12,7 +12,6 @@ export default function Home() {
       setFavorites(favorites.filter((favFilm) => favFilm.id !== film.id));
     } else {
       setFavorites([...favorites, film]);
-      console.log(favorites);
     }
   };
   return (
@@ -27,8 +26,7 @@ export default function Home() {
           <p>{film.description}</p>
           <button type="button" onClick={ () => handleFavorite(film) }>Favoritar</button>
         </div>
-      ), []) }
-      ,
+      )) }
     </div>
   );
 }

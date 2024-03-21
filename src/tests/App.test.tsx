@@ -71,6 +71,7 @@ describe('3 - Exibindo a lista de filmes favoritados na página Favorites', () =
     userEvent.click(homeLinkEl);
 
     // Favoritar 2 filmes
+    screen.debug();
     const buttonEls = await screen.findAllByRole('button');
     userEvent.click(buttonEls[2]);
     userEvent.click(buttonEls[3]);

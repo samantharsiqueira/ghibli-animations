@@ -15,11 +15,10 @@ function App() {
         const filmsData = await response.json();
         setFilms(filmsData);
       } catch (error) {
-        console.error('error searching films', error);
+        console.error('Error searching films:', error);
       }
     };
     fetchFilms();
-    console.log(films);
   }, []);
   return (
     <FilmsContext.Provider value={ { films, favorites, setFavorites } }>
