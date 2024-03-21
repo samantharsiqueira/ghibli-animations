@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 
 // Tipagem do objeto dentro do array
 export interface Film {
@@ -14,21 +14,11 @@ export interface Film {
 // Tipagem do array
 export type FilmContextType = {
   films:Film[];
+  favorites: Film[];
+  setFavorites: React.Dispatch<React.SetStateAction<Film[]>>;
 };
 
 // Contexto dos filmes
 const FilmsContext = createContext({} as FilmContextType);
-
-// Função que retorna o contexto dos filmes
-export function FilmsProvider({ children }: { children: React.ReactNode }) {
-  const [films, setFilms] = useState<Film[]>([]);
-
-  return (
-    <FilmsContext.Provider value={ { films } }>
-      { children }
-    </FilmsContext.Provider>
-
-  );
-}
 
 export default FilmsContext;

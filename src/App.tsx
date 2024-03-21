@@ -6,6 +6,7 @@ import Favorites from './pages/Favorites';
 
 function App() {
   const [films, setFilms] = useState<Film[]>([]);
+  const [favorites, setFavorites] = useState<Film[]>([]);
 
   useEffect(() => {
     const fetchFilms = async () => {
@@ -19,9 +20,9 @@ function App() {
     };
     fetchFilms();
     console.log(films);
-  }, [films]);
+  }, []);
   return (
-    <FilmsContext.Provider value={ { films: [] } }>
+    <FilmsContext.Provider value={ { films, favorites, setFavorites } }>
       <Routes>
         <Route path="/" Component={ Home } />
         <Route path="/favorites" Component={ Favorites } />
